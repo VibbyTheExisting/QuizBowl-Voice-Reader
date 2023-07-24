@@ -274,7 +274,6 @@ class QBApp(App):
             pygame.mixer.music.play()
         else:
             if "(+)" in question['question']:
-                print("SuperPOWER")
                 self.correctAdd = 25
                 p = question['question'].split("(+)")
                 self.parts = [p[0]] + p[1].split("(*)")
@@ -328,7 +327,6 @@ class QBApp(App):
         pygame.mixer.music.pause()
         if self.correct(resp:=listen()):
             self.points += self.correctAdd
-            print((20-self.correctAdd)/5)
             self.stats[int((20-self.correctAdd)/5)] += 1
             self.updateStats()
             self.next(resp)
