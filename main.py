@@ -15,7 +15,10 @@ import time
 from difflib import SequenceMatcher
 import speech_recognition as sr
 from kivy.core.window import Window
-Window.size = (1000, 600)
+from kivy.config import Config
+Config.set('graphics', 'resizable', False)
+SIZE = (1000, 600)
+Window.size = SIZE
 
 rec = sr.Recognizer()
 
@@ -177,9 +180,6 @@ class QBApp(App):
                         continue
             else:
                 self.questions = questions
-        
-        with open("Amhist.json", "x") as f:
-            json.dump(self.questions, f)
 
         temps = []
         if self.power:
