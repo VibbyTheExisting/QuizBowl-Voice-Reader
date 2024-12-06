@@ -1,0 +1,5 @@
+kivy==2.2.1
+pygame==2.6.1
+gTTS==2.5.4
+difflib=3.13.1
+SpeechRecognition==3.11.0
